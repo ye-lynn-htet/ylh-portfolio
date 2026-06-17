@@ -12,7 +12,7 @@ Please structure the page with a clean, scrollable layout containing the followi
    - Must feature a bold, minimalist headline.
    - Must contain an introductory sentence that is exactly or very close to 10 words stating: "I'm a professional Mobile Developer crafting high-performance iOS and Flutter applications."
    - Include a clean call-to-action button (e.g., "View My Work").
-   - Add a styled placeholder wrapper for a professional profile image (`/profile.png`). If an optimized SVG placeholder or abstract design pattern fits better, feel free to generate it inline.
+   - Create orbit animation with provided skills and rotating automatically
 
 3. **Technical Skills Section:**
    - Group my skills dynamically into modern visual badges or cards:
@@ -30,21 +30,20 @@ Please structure the page with a clean, scrollable layout containing the followi
 
 5. **Projects Grid Section:**
    - Create a clean 2- or 3-column responsive grid displaying key highlights:
-     * *SPOTV NOW App* (SwiftUI, Combine, Realm, BrightCove SDK)
-     * *Rehabilitation System* (Flutter, MQTT, Python, FastAPI)
-     * *Kakely App* (Flutter, Dart, Riverpods, RestAPI)
-     * *Pet Lovers Centre App* (UIKit, RxSwift, Realm)
-     * *SAYA - English Learning App* (UIKit, ZoomSDK, VdoCipher)
-     * *Flash Mall EPOS System* (UIKit, Bluetooth printing, TSC Barcode SDK)
+     * *SPOTV NOW App* (SwiftUI, Combine, Realm, BrightCove SDK) AppStore link => https://apps.apple.com/sg/app/spotv-now-sports-streaming/id1585915793
+     * *SAYA - English Learning App* (UIKit, ZoomSDK, VdoCipher) AppStore link => https://apps.apple.com/sg/app/saya-the-learning-app/id1612592914
+     * *Kakely App* (Flutter, Dart, Riverpods, RestAPI,) AppStore link => https://apps.apple.com/jp/app/kakely/id6642692743?l=en-US
+     * *Pet Lovers Centre App* (UIKit, RxSwift, Realm) AppStore link => https://apps.apple.com/jp/app/plc-vip-concierge-sg/id1471953601?l=en-US
+     * *Flash Mall EPOS System* (UIKit, Bluetooth printing, TSC Barcode SDK) AppStore link => https://apps.apple.com/jp/app/flash-mall-shop-epos/id1637021280?l=en-US
    - Each project card should cleanly list the tech stack tags and include slick placeholder buttons for "View on AppStore" or "GitHub".
 
 6. **Footer / Contact Information:**
    - A highly professional, clean footer section showcasing my personal contact channels:
      * Email: yelynnhtet22798@gmail.com
      * Phone: +817085453784
-     * Location: Tokyo, Japan
+     * Location: Kobe, Japan
      * LinkedIn: linkedin.com/yelynnhtet
-     * GitHub: github.com/raelildev
+     * GitHub: github.com/ye-lynn-htet
 
 ### Extra Requirements
 - **Asset Generation:** If any iconography, abstract background shapes, or brand logos are needed, please generate clean inline SVGs or custom Tailwind shapes rather than relying on external image networks.

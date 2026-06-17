@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Ye Lynn Htet — Senior Mobile Developer",
-  description: "Senior Mobile Developer crafting high-performance iOS and Flutter applications. Based in Tokyo, Japan.",
+  description: "Senior Mobile Developer crafting high-performance iOS and Flutter applications. Based in Kobe, Japan.",
 };
 
 export default function RootLayout({
