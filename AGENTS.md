@@ -137,6 +137,20 @@ npm run lint       # Run ESLint
 - Change the slate-950 base color to zinc or neutral — slate was a deliberate choice to avoid AI-default palettes
 - Create separate component files without confirming — the site is co-located in `page.tsx`
 
+## Git Workflow
+
+After completing a code change, follow this sequence — do NOT skip any step:
+
+1. **Verify the change** — run `npm run build` to confirm the project compiles without errors.
+2. **Show the output** — present the build result to the user. If it fails, fix and repeat step 1.
+3. **Wait for confirmation** — ask the user to approve before staging, committing, or pushing.
+4. **Commit and push** — only after the user confirms:
+   ```bash
+   git add . && git commit -m "<descriptive message>" && git push
+   ```
+
+Never commit or push without the user explicitly approving it first.
+
 ## Installed Agents
 
 | Agent | File | Use when |

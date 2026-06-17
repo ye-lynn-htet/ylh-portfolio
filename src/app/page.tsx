@@ -163,134 +163,60 @@ function Tag({ children, accent }: { children: string; accent: Accent }) {
   );
 }
 
-// ── Logo orbit ───────────────────────────────────────────────────────
+// ── Orbit — neon language ring ─────────────────────────────────────────
 
-const orbitLogos = [
-  {
-    label: "Swift",
-    svg: (
-      <svg viewBox="0 0 100 100" className="h-8 w-8 sm:h-9 sm:w-9" aria-hidden="true">
-        <path d="M82 26c-4 22-22 32-38 36 6.5-5 10-10 11-16-12 4-25.5 7-36 0 10 16 28 28 52 24-6 8-14 18-33 18C72 84 80 68 82 26Z" fill="#fb923c" opacity="0.65"/>
-        <path d="M46 15c6 14 10 24 18 38-10-5-14-5-26-5 2-10 5-22 8-33Z" fill="#f97316" opacity="0.45"/>
-      </svg>
-    ),
-  },
-  {
-    label: "Flutter",
-    svg: (
-      <svg viewBox="0 0 100 100" className="h-8 w-8 sm:h-9 sm:w-9" aria-hidden="true">
-        <path d="M78 12 15 80h35L95 12Z" fill="#38bdf8" opacity="0.55"/>
-        <path d="M54 40 26 80h28l27-40Z" fill="#7dd3fc" opacity="0.35"/>
-        <path d="M48 54 35 80h18l13-26Z" fill="#bae6fd" opacity="0.2"/>
-      </svg>
-    ),
-  },
-  {
-    label: "Python",
-    svg: (
-      <svg viewBox="0 0 100 100" className="h-8 w-8 sm:h-9 sm:w-9" aria-hidden="true">
-        <path d="M50 10C38 10 32 15 32 22v10h18v3H20c-7 0-13 4-13 14s6 13 12 13h6v-8c0-7 5-12 13-12h16c7 0 12-6 12-13s-5-13-13-13H50Z" fill="#06b6d4" opacity="0.5"/>
-        <path d="M50 90c12 0 18-5 18-12V68H50v-3h30c7 0 13-4 13-14s-6-13-12-13h-6v8c0 7-5 12-13 12H46c-7 0-12 6-12 13s5 13 13 13h3Z" fill="#eab308" opacity="0.55"/>
-        <circle cx="38" cy="22" r="3" fill="#e0f2fe" opacity="0.7"/>
-        <circle cx="62" cy="78" r="3" fill="#fefce8" opacity="0.7"/>
-      </svg>
-    ),
-  },
-  {
-    label: "Dart",
-    svg: (
-      <svg viewBox="0 0 100 100" className="h-8 w-8 sm:h-9 sm:w-9" aria-hidden="true">
-        <circle cx="50" cy="50" r="38" stroke="#2dd4bf" strokeWidth="3" opacity="0.5"/>
-        <circle cx="50" cy="50" r="30" stroke="#14b8a6" strokeWidth="1.5" opacity="0.3"/>
-        <path d="M50 20 75 55 50 80 25 55Z" fill="#2dd4bf" opacity="0.45"/>
-        <circle cx="50" cy="55" r="10" fill="#0d9488" opacity="0.55"/>
-      </svg>
-    ),
-  },
-  {
-    label: "UIKit",
-    svg: (
-      <svg viewBox="0 0 100 100" className="h-8 w-8 sm:h-9 sm:w-9" aria-hidden="true">
-        <rect x="22" y="18" width="56" height="64" rx="12" stroke="#3b82f6" strokeWidth="2.5" opacity="0.55"/>
-        <rect x="29" y="36" width="42" height="2" rx="1" fill="#3b82f6" opacity="0.2"/>
-        <rect x="29" y="45" width="30" height="2" rx="1" fill="#3b82f6" opacity="0.3"/>
-        <rect x="29" y="52" width="38" height="2" rx="1" fill="#3b82f6" opacity="0.25"/>
-        <circle cx="42" cy="28" r="3" fill="#60a5fa" opacity="0.5"/>
-        <rect x="29" y="62" width="42" height="8" rx="4" fill="#3b82f6" opacity="0.15"/>
-      </svg>
-    ),
-  },
-  {
-    label: "FastAPI",
-    svg: (
-      <svg viewBox="0 0 100 100" className="h-8 w-8 sm:h-9 sm:w-9" aria-hidden="true">
-        <path d="M50 12C32 12 18 24 18 40c0 10 3 18 8 24l3 24h42l3-24c5-6 8-14 8-24 0-16-14-28-32-28Z" fill="#10b981" opacity="0.5"/>
-        <path d="M18 40s8 20 32 20 32-20 32-20" fill="#059669" opacity="0.35"/>
-        <path d="M38 28h24l-12 18h10L44 72l6-26Z" fill="#6ee7b7" opacity="0.7" clipPath="url(#bolt)"/>
-      </svg>
-    ),
-  },
-  {
-    label: "SwiftUI",
-    svg: (
-      <svg viewBox="0 0 100 100" className="h-8 w-8 sm:h-9 sm:w-9" aria-hidden="true">
-        <rect x="18" y="18" width="64" height="64" rx="16" stroke="#818cf8" strokeWidth="2.5" opacity="0.55"/>
-        <path d="M36 50 46 62 66 38" stroke="#a78bfa" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" opacity="0.65"/>
-        <circle cx="46" cy="62" r="4" fill="#c4b5fd" opacity="0.4"/>
-      </svg>
-    ),
-  },
-  {
-    label: "RxSwift",
-    svg: (
-      <svg viewBox="0 0 100 100" className="h-8 w-8 sm:h-9 sm:w-9" aria-hidden="true">
-        <circle cx="50" cy="50" r="34" stroke="#a855f7" strokeWidth="3" opacity="0.5"/>
-        <path d="M50 22 74 60H26Z" fill="#a855f7" opacity="0.25"/>
-        <path d="M32 40h36" stroke="#c084fc" strokeWidth="2" opacity="0.4"/>
-        <path d="M36 50h28" stroke="#c084fc" strokeWidth="2" opacity="0.35"/>
-        <circle cx="50" cy="50" r="8" stroke="#d8b4fe" strokeWidth="2" opacity="0.45"/>
-      </svg>
-    ),
-  },
+const orbitLabels = [
+  { label: "Swift",   color: "#f97316" },
+  { label: "Flutter", color: "#38bdf8" },
+  { label: "Python",  color: "#eab308" },
+  { label: "Dart",    color: "#2dd4bf" },
+  { label: "UIKit",   color: "#3b82f6" },
+  { label: "FastAPI", color: "#10b981" },
+  { label: "SwiftUI", color: "#a78bfa" },
+  { label: "RxSwift", color: "#c084fc" },
 ];
 
 function HeroIllustration() {
   return (
     <div
-      className="relative h-72 w-72 shrink-0 sm:h-80 sm:w-80 group"
+      className="relative h-[340px] w-[340px] shrink-0 sm:h-[440px] sm:w-[440px] lg:h-[520px] lg:w-[520px]"
       role="img"
-      aria-label="Technology logos orbiting: Swift, Flutter, Python, Dart, UIKit, FastAPI, SwiftUI, RxSwift"
+      aria-label="Programming languages orbiting: Swift, Flutter, Python, Dart, UIKit, FastAPI, SwiftUI, RxSwift"
     >
       {/* Ghost ring guides */}
-      <div aria-hidden="true" className="absolute inset-0 rounded-full border border-slate-800/60" />
-      <div aria-hidden="true" className="absolute inset-8 rounded-full border border-slate-800/40 sm:inset-10" />
-      <div aria-hidden="true" className="absolute inset-16 rounded-full border border-slate-800/20 sm:inset-20" />
+      <div aria-hidden="true" className="absolute inset-0 rounded-full border border-slate-800/40" />
+      <div aria-hidden="true" className="absolute inset-12 rounded-full border border-slate-800/25 sm:inset-14" />
+      <div aria-hidden="true" className="absolute inset-24 rounded-full border border-slate-800/15 sm:inset-28" />
 
       {/* Central anchor */}
       <div
         aria-hidden="true"
-        className="absolute left-1/2 top-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-indigo-500/30"
+        className="absolute left-1/2 top-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-indigo-500/20 shadow-[0_0_20px_rgba(99,102,241,0.3)]"
       />
 
       {/* Rotating ring */}
-      <div className="absolute inset-0 animate-orbit group-hover:animate-orbit-fast">
-        {orbitLogos.map((logo, i) => {
-          const angle = (i * 45 * Math.PI) / 180; // radians
-          const R = 112; // orbit radius in px
+      <div className="absolute inset-0 animate-orbit">
+        {orbitLabels.map((item, i) => {
+          const angle = (i * 45 * Math.PI) / 180;
+          // Radius scales with container size
+          const R = 158;
 
           return (
             <div
-              key={logo.label}
+              key={item.label}
               className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-1"
               style={{
                 transform: `translate(${Math.round(Math.cos(angle) * R)}px, ${Math.round(Math.sin(angle) * R)}px)`,
               }}
             >
-              <div className="animate-unorbit group-hover:animate-unorbit-fast">
-                {logo.svg}
-              </div>
-              <span className="animate-unorbit group-hover:animate-unorbit-fast font-mono text-[9px] font-medium tracking-widest text-slate-600 uppercase sm:text-[10px]">
-                {logo.label}
+              <span
+                className="font-mono text-sm font-bold tracking-tight whitespace-nowrap sm:text-base lg:text-lg animate-unorbit"
+                style={{
+                  color: item.color,
+                  filter: `drop-shadow(0 0 6px ${item.color}44) drop-shadow(0 0 2px ${item.color}66)`,
+                }}
+              >
+                {item.label}
               </span>
             </div>
           );

@@ -4,9 +4,7 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --animate-orbit: orbit 24s linear infinite;
-  --animate-orbit-fast: orbit 8s linear infinite;
   --animate-unorbit: unorbit 24s linear infinite;
-  --animate-unorbit-fast: unorbit 8s linear infinite;
 }
 
 @keyframes orbit {
