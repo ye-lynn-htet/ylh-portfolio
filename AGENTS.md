@@ -155,8 +155,8 @@ Never commit or push without the user explicitly approving it first.
 
 | Agent | File | Use when |
 |-------|------|----------|
-| `frontend-ui-engineering` | `.agents/skills/frontend-ui-engineering/SKILL.md` | Building/modifying UI components, implementing layouts, managing state, production-quality output |
-| `frontend-design` | `.agents/skills/frontend-design/SKILL.md` | Designing new sections, choosing visuals, typography, palette decisions |
-| `vercel-react-best-practices` | `.agents/skills/vercel-react-best-practices/SKILL.md` | Writing/refactoring React or Next.js code, data fetching, bundle optimization |
+| `frontend-ui-engineering` | `.claude/skills/frontend-ui-engineering/SKILL.md` | Building/modifying UI components, implementing layouts, managing state, production-quality output |
+| `frontend-design` | `.claude/skills/frontend-design/SKILL.md` | Designing new sections, choosing visuals, typography, palette decisions |
+| `vercel-react-best-practices` | `.claude/skills/vercel-react-best-practices/SKILL.md` | Writing/refactoring React or Next.js code, data fetching, bundle optimization |
 
-All three are registered as project skills in `.claude/skills/`. Invoke them with `/frontend-ui-engineering`, `/frontend-design`, or `/vercel-react-best-practices` when their domain applies.
+All three are registered as project skills in `.claude/skills/` with corresponding agent definitions in `.claude/agents/`. Invoke them with `/frontend-ui-engineering`, `/frontend-design`, or `/vercel-react-best-practices` when their domain applies.
