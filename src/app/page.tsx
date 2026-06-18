@@ -1,167 +1,5 @@
-// ── Data ──────────────────────────────────────────────────────────────
-const navLinks = [
-  { label: "Skills", href: "#skills" },
-  { label: "Experience", href: "#experience" },
-  { label: "Projects", href: "#projects" },
-  { label: "Contact", href: "#contact" },
-] as const;
-
-const skillGroups = [
-  {
-    label: "Languages & Frameworks",
-    accent: "sky",
-    items: ["UIKit", "SwiftUI", "Swift", "Flutter", "Dart", "Python", "FastAPI"],
-  },
-  {
-    label: "Reactive & Data",
-    accent: "indigo",
-    items: [
-      "RxSwift", "RxCocoa", "Combine", "Riverpods",
-      "Realm", "CoreData", "Firebase", "RestAPI", "WebSocket", "MQTT",
-    ],
-  },
-  {
-    label: "Tools & Agile",
-    accent: "emerald",
-    items: ["GitHub", "SourceTree", "Backlog"],
-  },
-  {
-    label: "Specialized SDKs",
-    accent: "amber",
-    items: ["GoogleMap", "Zoom", "VdoCipher", "BrightCove", "TSC Barcode SDKs"],
-  },
-] as const;
-
-const experiences = [
-  {
-    company: "Telaaxon",
-    role: "Senior Application Developer",
-    period: "Jan 2025 — Present",
-    accent: "indigo",
-    highlights: [
-      "Leading Flutter refactoring initiatives across multiple modules",
-      "Building remote rehabilitation systems with real-time MQTT communication",
-      "Collaborating directly with tech leads on architecture decisions",
-    ],
-  },
-  {
-    company: "CODIGO",
-    role: "Senior iOS Developer",
-    period: "Nov 2023 — Oct 2024",
-    accent: "sky",
-    highlights: [
-      "Built SPOTV NOW — a live sports streaming app with BrightCove SDK integration",
-      "Developed Pet Lovers Centre e-commerce app with In-App purchases and biometrics",
-      "Delivered pixel-perfect UIKit interfaces for high-traffic consumer apps",
-    ],
-  },
-  {
-    company: "Binary Lab",
-    role: "Senior iOS Developer",
-    period: "Feb 2023 — Nov 2023",
-    accent: "emerald",
-    highlights: [
-      "Developed SAYA English learning app with Zoom and VdoCipher SDKs",
-      "Built MCPA application with real-time WebSocket features",
-      "Implemented secure Apple Keychain services for credential storage",
-    ],
-  },
-  {
-    company: "Light Idea Software",
-    role: "iOS Developer",
-    period: "Jun 2021 — Feb 2023",
-    accent: "amber",
-    highlights: [
-      "Built iOS apps from scratch using MVVM architecture and RxSwift",
-      "Developed Flash Mall EPOS system with Bluetooth print integration",
-      "Delivered Sonix Delivery app — real-time driver tracking and order management",
-    ],
-  },
-] as const;
-
-const projects = [
-  {
-    title: "SPOTV NOW",
-    description: "Live sports streaming app for Southeast Asian markets — BrightCove-powered video, real-time scores, and multi-language support.",
-    tags: ["SwiftUI", "Combine", "Realm", "BrightCove SDK"],
-    accent: "indigo",
-    appStore: "https://apps.apple.com/sg/app/spotv-now-sports-streaming/id1585915793",
-  },
-  {
-    title: "SAYA — English Learning",
-    description: "Interactive language learning app with live Zoom classrooms and VdoCipher-protected video lessons.",
-    tags: ["UIKit", "ZoomSDK", "VdoCipher"],
-    accent: "violet",
-    appStore: "https://apps.apple.com/sg/app/saya-the-learning-app/id1612592914",
-  },
-  {
-    title: "Kakely",
-    description: "Social writing app with collaborative editing, community features, and real-time syncing via REST APIs.",
-    tags: ["Flutter", "Dart", "Riverpods", "RestAPI"],
-    accent: "amber",
-    appStore: "https://apps.apple.com/jp/app/kakely/id6642692743?l=en-US",
-  },
-  {
-    title: "Pet Lovers Centre",
-    description: "E-commerce app for Singapore's largest pet retailer — product catalog, cart, and biometric-secured checkout.",
-    tags: ["UIKit", "RxSwift", "Realm"],
-    accent: "sky",
-    appStore: "https://apps.apple.com/jp/app/plc-vip-concierge-sg/id1471953601?l=en-US",
-  },
-  {
-    title: "Flash Mall EPOS",
-    description: "Point-of-sale system with Bluetooth thermal printing, TSC barcode scanning, and inventory management.",
-    tags: ["UIKit", "Bluetooth", "TSC Barcode SDK"],
-    accent: "rose",
-    appStore: "https://apps.apple.com/jp/app/flash-mall-shop-epos/id1637021280?l=en-US",
-  },
-] as const;
-
-const contact = {
-  email: "yelynnhtet22798@gmail.com",
-  phone: "+81 70-8545-3784",
-  location: "Kobe, Japan",
-  linkedin: "linkedin.com/yelynnhtet",
-  github: "github.com/ye-lynn-htet",
-} as const;
-
-// ── Token helpers ─────────────────────────────────────────────────────
-type Accent = "indigo" | "sky" | "emerald" | "amber" | "violet" | "rose";
-
-const accentTokens: Record<Accent, { bar: string; tag: string; glow: string }> = {
-  indigo:  { bar: "bg-indigo-500",  tag: "text-indigo-400  border-indigo-500/20",  glow: "bg-indigo-500/10" },
-  sky:     { bar: "bg-sky-500",     tag: "text-sky-400     border-sky-500/20",     glow: "bg-sky-500/10" },
-  emerald: { bar: "bg-emerald-500", tag: "text-emerald-400 border-emerald-500/20", glow: "bg-emerald-500/10" },
-  amber:   { bar: "bg-amber-500",   tag: "text-amber-400   border-amber-500/20",   glow: "bg-amber-500/10" },
-  violet:  { bar: "bg-violet-500",  tag: "text-violet-400  border-violet-500/20",  glow: "bg-violet-500/10" },
-  rose:    { bar: "bg-rose-500",    tag: "text-rose-400    border-rose-500/20",    glow: "bg-rose-500/10" },
-};
-
-// ── Reusable micro-components ─────────────────────────────────────────
-
-function SectionLabel({ children }: { children: string }) {
-  return (
-    <div className="flex items-center gap-3">
-      <span aria-hidden="true" className="h-px w-8 bg-indigo-500/40" />
-      <p className="font-mono text-xs font-medium tracking-[0.2em] text-slate-500 uppercase">
-        {children}
-      </p>
-    </div>
-  );
-}
-
-function AccentBar({ accent }: { accent: Accent }) {
-  return <div className={`h-1 w-8 rounded-full ${accentTokens[accent].bar}`} />;
-}
-
-function Tag({ children, accent }: { children: string; accent: Accent }) {
-  const t = accentTokens[accent];
-  return (
-    <span className={`rounded-full border px-2.5 py-0.5 text-xs font-medium ${t.tag} bg-slate-900/80`}>
-      {children}
-    </span>
-  );
-}
+import { navLinks, skillGroups, experiences, projects, contact } from "@/app/fallback-data";
+import { SectionLabel, AccentBar, Tag, ProjectCard, accentTokens } from "@/app/components";
 
 // ── Orbit — neon language ring ─────────────────────────────────────────
 
@@ -198,7 +36,6 @@ function HeroIllustration() {
       <div className="absolute inset-0 animate-orbit">
         {orbitLabels.map((item, i) => {
           const angle = (i * 45 * Math.PI) / 180;
-          // Radius scales with container size
           const R = 158;
 
           return (
@@ -222,6 +59,22 @@ function HeroIllustration() {
           );
         })}
       </div>
+    </div>
+  );
+}
+
+// ── Explore More button ─────────────────────────────────────────────────
+
+function ExploreMore({ href, label }: { href: string; label: string }) {
+  return (
+    <div className="mt-8 text-center">
+      <a
+        href={href}
+        className="inline-flex items-center gap-2 rounded-xl border border-slate-700 px-5 py-3 text-sm font-medium text-slate-300 transition-all hover:border-indigo-500 hover:text-indigo-400"
+      >
+        {label}
+        <span aria-hidden="true">→</span>
+      </a>
     </div>
   );
 }
@@ -317,7 +170,7 @@ export default function Home() {
         </section>
 
         {/* ════════════════════════════════════════════════════════════
-            SKILLS
+            SKILLS — 3 of 4 groups
             ════════════════════════════════════════════════════════════ */}
         <section id="skills" className="scroll-mt-20 space-y-8">
           <div className="space-y-3">
@@ -327,7 +180,7 @@ export default function Home() {
             </h2>
           </div>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-            {skillGroups.map((group) => (
+            {skillGroups.slice(0, 3).map((group) => (
               <div
                 key={group.label}
                 className="group rounded-xl border border-slate-800 bg-slate-900/60 p-5 transition-all hover:border-slate-700 sm:p-6"
@@ -348,10 +201,11 @@ export default function Home() {
               </div>
             ))}
           </div>
+          <ExploreMore href="/skills" label="Explore All Skills" />
         </section>
 
         {/* ════════════════════════════════════════════════════════════
-            EXPERIENCE
+            EXPERIENCE — 3 of 4 roles
             ════════════════════════════════════════════════════════════ */}
         <section id="experience" className="scroll-mt-20 space-y-8">
           <div className="space-y-3">
@@ -363,7 +217,7 @@ export default function Home() {
           <ol className="relative space-y-0" role="list">
             {/* Vertical timeline line */}
             <div className="pointer-events-none absolute bottom-0 left-[15px] top-0 w-px bg-slate-800 sm:left-[19px]" aria-hidden="true" />
-            {experiences.map((exp) => (
+            {experiences.slice(0, 3).map((exp) => (
               <li key={exp.company} className="group relative pb-10 pl-10 last:pb-0 sm:pl-12">
                 {/* Timeline dot */}
                 <span
@@ -395,10 +249,11 @@ export default function Home() {
               </li>
             ))}
           </ol>
+          <ExploreMore href="/experience" label="Explore Full History" />
         </section>
 
         {/* ════════════════════════════════════════════════════════════
-            PROJECTS
+            PROJECTS — 3 of 5 projects
             ════════════════════════════════════════════════════════════ */}
         <section id="projects" className="scroll-mt-20 space-y-8">
           <div className="space-y-3">
@@ -408,52 +263,11 @@ export default function Home() {
             </h2>
           </div>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {projects.map((project) => {
-              const t = accentTokens[project.accent];
-              return (
-                <div
-                  key={project.title}
-                  className="group relative flex flex-col gap-4 rounded-xl border border-slate-800 bg-slate-900/60 p-5 transition-all hover:-translate-y-1 hover:border-slate-700 hover:shadow-xl sm:p-6"
-                >
-                  {/* Hover glow */}
-                  <div
-                    className={`pointer-events-none absolute inset-0 rounded-xl opacity-0 transition-opacity duration-500 group-hover:opacity-100 ${t.glow} blur-lg`}
-                    aria-hidden="true"
-                  />
-                  <AccentBar accent={project.accent} />
-                  <div className="relative z-10 flex flex-col gap-2">
-                    <h3 className="text-base font-semibold tracking-tight text-slate-100">
-                      {project.title}
-                    </h3>
-                    <p className="text-sm leading-relaxed text-slate-400">
-                      {project.description}
-                    </p>
-                  </div>
-                  <div className="relative z-10 flex flex-wrap gap-1.5">
-                    {project.tags.map((tag) => (
-                      <Tag key={tag} accent={project.accent}>
-                        {tag}
-                      </Tag>
-                    ))}
-                  </div>
-                  {/* Action buttons */}
-                  <div className="relative z-10 flex gap-3 pt-1">
-                    <a
-                      href={project.appStore}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 rounded-lg border border-slate-700 px-3 py-1.5 text-xs font-medium text-slate-400 transition-colors hover:border-slate-500 hover:text-slate-300"
-                    >
-                      <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                        <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
-                      </svg>
-                      App Store
-                    </a>
-                  </div>
-                </div>
-              );
-            })}
+            {projects.slice(0, 3).map((project) => (
+              <ProjectCard key={project.title} project={project} />
+            ))}
           </div>
+          <ExploreMore href="/projects" label="Explore All Projects" />
         </section>
 
         {/* ════════════════════════════════════════════════════════════
