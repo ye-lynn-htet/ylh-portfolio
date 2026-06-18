@@ -24,7 +24,9 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - **App Router only** — no Pages Router. All routes live under `src/app/`.
 - **Single-page layout** — sections scroll on the same route (`/`). Navigation uses anchor IDs (`#skills`, `#experience`, `#projects`, `#contact`).
 - **Server Components by default** — add `"use client"` only when you need interactivity (state, effects, event handlers). The site is fully static.
-- **No API routes yet** — all data lives in `const` arrays and objects at the top of `page.tsx`. No database, no fetch.
+- **No API routes yet** — all data lives in `const` arrays and objects at the top of `page.tsx`. No database, no fetch. Future API binding is planned; see `instructions.md` for the full preparation guide.
+- **Detail screens planned** — each section will have a dedicated `/skills`, `/experience`, `/projects` route. Individual projects get `/projects/[slug]` detail pages.
+- **Home screen: 3-item preview** — the landing page shows 3 items per section with an "Explore More →" button linking to the full detail route. This keeps the home page scannable while offering depth.
 - **Mobile-first responsive** — all Tailwind classes start at the smallest breakpoint and scale up (`sm:`, `md:`, `lg:`).
 
 ## Design System
@@ -155,8 +157,8 @@ Never commit or push without the user explicitly approving it first.
 
 | Agent | File | Use when |
 |-------|------|----------|
-| `frontend-ui-engineering` | `.agents/skills/frontend-ui-engineering/SKILL.md` | Building/modifying UI components, implementing layouts, managing state, production-quality output |
-| `frontend-design` | `.agents/skills/frontend-design/SKILL.md` | Designing new sections, choosing visuals, typography, palette decisions |
-| `vercel-react-best-practices` | `.agents/skills/vercel-react-best-practices/SKILL.md` | Writing/refactoring React or Next.js code, data fetching, bundle optimization |
+| `frontend-ui-engineering` | `.claude/skills/frontend-ui-engineering/SKILL.md` | Building/modifying UI components, implementing layouts, managing state, production-quality output |
+| `frontend-design` | `.claude/skills/frontend-design/SKILL.md` | Designing new sections, choosing visuals, typography, palette decisions |
+| `vercel-react-best-practices` | `.claude/skills/vercel-react-best-practices/SKILL.md` | Writing/refactoring React or Next.js code, data fetching, bundle optimization |
 
-All three are registered as project skills in `.claude/skills/`. Invoke them with `/frontend-ui-engineering`, `/frontend-design`, or `/vercel-react-best-practices` when their domain applies.
+All three are registered as project skills in `.claude/skills/` with corresponding agent definitions in `.claude/agents/`. Invoke them with `/frontend-ui-engineering`, `/frontend-design`, or `/vercel-react-best-practices` when their domain applies.
