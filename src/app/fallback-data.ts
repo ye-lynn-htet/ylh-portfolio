@@ -120,7 +120,6 @@ export const projects: Project[] = [
 
 export const contact: Contact = {
   email: "yelynnhtet22798@gmail.com",
-  phone: "+81 70-8545-3784",
   location: "Kobe, Japan",
   linkedin: "linkedin.com/yelynnhtet",
   github: "github.com/ye-lynn-htet",

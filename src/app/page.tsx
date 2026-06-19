@@ -286,7 +286,6 @@ export default function Home() {
           <dl className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {[
               { label: "Email", value: contact.email, href: `mailto:${contact.email}` },
-              { label: "Phone", value: contact.phone, href: `tel:${contact.phone.replace(/[^\d+]/g, "")}` },
               { label: "Location", value: contact.location, href: null },
               { label: "LinkedIn", value: contact.linkedin, href: `https://${contact.linkedin}` },
               { label: "GitHub", value: contact.github, href: `https://${contact.github}` },
@@ -300,7 +299,7 @@ export default function Home() {
                     <a
                       href={item.href}
                       className="text-sm text-slate-300 transition-colors hover:text-indigo-400"
-                      {...(item.label === "Email" || item.label === "Phone" ? {} : { target: "_blank", rel: "noopener noreferrer" })}
+                      {...(item.label === "Email" ? {} : { target: "_blank", rel: "noopener noreferrer" })}
                     >
                       {item.value}
                     </a>
