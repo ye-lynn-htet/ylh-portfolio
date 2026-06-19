@@ -29,7 +29,7 @@ export interface Project {
 
 export interface Contact {
   email: string;
-  phone: string;
+  phone?: string;
   location: string;
   linkedin: string;
   github: string;
