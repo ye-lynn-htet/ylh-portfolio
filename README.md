@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ye Lynn Htet — Portfolio
 
-## Getting Started
+A personal portfolio website for a senior mobile developer (iOS & Flutter).
 
-First, run the development server:
+**Live site:** [ye-lynn-htet.vercel.app](https://ye-lynn-htet.vercel.app)
+
+---
+
+## Screenshots
+
+### Hero Section
+![Hero](public/screenshots/hero.png)
+
+### Skills Section
+![Skills](public/screenshots/skills.png)
+
+### Experience Section
+![Experience](public/screenshots/experience.png)
+
+### Projects Section
+![Projects](public/screenshots/projects.png)
+
+### Contact Section
+![Contact](public/screenshots/contact.png)
+
+---
+
+## Tech Stack
+
+| Tool | What it does |
+|------|-------------|
+| [Next.js 16](https://nextjs.org) | React framework (App Router) |
+| [React 19](https://react.dev) | UI library |
+| [Tailwind CSS v4](https://tailwindcss.com) | Styling |
+| [TypeScript 5](https://www.typescriptlang.org) | Type safety |
+| [Geist Font](https://vercel.com/font) | Typography |
+
+---
+
+## How to Run
 
 ```bash
+# Install dependencies
+npm install
+
+# Start dev server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project Structure
 
-## Learn More
+```
+src/
+├── app/
+│   ├── layout.tsx      # Root layout (fonts, smooth scroll)
+│   ├── page.tsx        # Main page with all sections
+│   └── globals.css     # Tailwind imports + animations
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Sections
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Header** — Sticky navigation bar
+2. **Hero** — Introduction with animated logo orbit
+3. **Skills** — iOS, Flutter, and tools
+4. **Experience** — Work history timeline
+5. **Projects** — App Store and GitHub projects
+6. **Contact** — Email, GitHub, location
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deploy
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This site is deployed on [Vercel](https://vercel.com). Push to `main` and it deploys automatically.
+
+---
+
+## License
+
+Personal portfolio — not intended for reuse.

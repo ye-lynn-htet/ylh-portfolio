@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { projects } from "@/app/fallback-data";
 import { toSlug } from "@/lib/slug";
 import { Tag, BackLink } from "@/app/components";
 import { accentTokens } from "@/app/components";
-import type { Accent } from "@/types/portfolio";
 
 export async function generateStaticParams() {
   return projects.map((p) => ({ slug: toSlug(p.title) }));
@@ -34,13 +34,13 @@ export default async function ProjectDetailPage({ params }: Props) {
           <p className="mt-2 text-slate-400">
             The project you&rsquo;re looking for doesn&rsquo;t exist.
           </p>
-          <a
+          <Link
             href="/projects"
             className="mt-6 inline-flex items-center gap-1.5 rounded-lg border border-slate-700 px-4 py-2 text-sm text-slate-300 transition-colors hover:border-indigo-500 hover:text-indigo-400"
           >
             <span aria-hidden="true">←</span>
             Back to Projects
-          </a>
+          </Link>
         </main>
       </div>
     );
