@@ -10,7 +10,7 @@ A personal portfolio website for a senior mobile developer (iOS & Flutter).
 
 *Captured with Chrome DevTools MCP at a fixed desktop resolution (1280×800).*
 
-![Hero section](screenshots/hero.png)
+![Home section](screenshots/home.png)
 
 ![Skills section](screenshots/skills.png)
 
