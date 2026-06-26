@@ -8,20 +8,13 @@ A personal portfolio website for a senior mobile developer (iOS & Flutter).
 
 ## Screenshots
 
-### Hero Section
-![Hero](public/screenshots/hero.png)
+*Captured with Chrome DevTools MCP at a fixed desktop resolution (1280×800).*
 
-### Skills Section
-![Skills](public/screenshots/skills.png)
+![Hero section](screenshots/hero.png)
 
-### Experience Section
-![Experience](public/screenshots/experience.png)
+![Skills section](screenshots/skills.png)
 
-### Projects Section
-![Projects](public/screenshots/projects.png)
-
-### Contact Section
-![Contact](public/screenshots/contact.png)
+![Projects section](screenshots/projects.png)
 
 ---
 
