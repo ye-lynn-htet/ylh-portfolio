@@ -218,7 +218,7 @@ export default function Home() {
             HERO
             ════════════════════════════════════════════════════════════ */}
         <section className="flex flex-col items-center gap-10 sm:flex-row sm:gap-16">
-          <div className="flex flex-col gap-6 text-center sm:text-left">
+          <div className="order-2 flex flex-col gap-6 text-center sm:order-1 sm:text-left">
             <p
               className="font-mono text-sm font-medium tracking-[0.2em] text-indigo-400 uppercase"
               style={{ animation: "fadeInUp 0.6s ease-out 0.1s both" }}
@@ -255,7 +255,7 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div style={{ animation: "fadeInUp 0.8s ease-out 0.3s both" }}>
+          <div className="order-1 sm:order-2" style={{ animation: "fadeInUp 0.8s ease-out 0.3s both" }}>
             <HeroIllustration />
           </div>
         </section>
