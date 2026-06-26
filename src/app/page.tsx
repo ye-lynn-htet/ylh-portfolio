@@ -198,18 +198,19 @@ export default function Home() {
               </li>
             ))}
           </ul>
-          {/* Mobile nav — compact dots for now */}
-          <div className="flex items-center gap-4 sm:hidden" aria-label="Quick navigation">
+          {/* Mobile nav — full labels */}
+          <ul className="flex items-center gap-1 sm:hidden" role="list" aria-label="Quick navigation">
             {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-xs text-slate-400 transition-colors hover:text-indigo-400"
-              >
-                {link.label.slice(0, 3)}
-              </a>
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  className="rounded-md px-2.5 py-1.5 text-xs font-medium text-slate-400 transition-colors hover:bg-slate-800 hover:text-slate-200"
+                >
+                  {link.label}
+                </a>
+              </li>
             ))}
-          </div>
+          </ul>
         </nav>
       </header>
 
