@@ -67,10 +67,10 @@ Skill(code-review)
 
 The review provides structured feedback with:
 
-- **✅ Strengths**: What's done well
-- **⚠️ Improvements**: Suggested enhancements
-- **❌ Issues**: Critical problems to fix
-- **📊 Summary**: Overall assessment
+- **Strengths**: What's done well
+- **Improvements**: Suggested enhancements
+- **Issues**: Critical problems to fix
+- **Summary**: Overall assessment
 
 ## Example
 

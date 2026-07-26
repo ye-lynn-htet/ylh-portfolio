@@ -147,10 +147,10 @@ function ExploreMore({ href, label }: { href: string; label: string }) {
     <div className="mt-8 text-center">
       <a
         href={href}
-        className="inline-flex items-center gap-2 rounded-xl border border-slate-700 px-5 py-3 text-sm font-medium text-slate-300 transition-all hover:border-indigo-500 hover:text-indigo-400"
+        className="inline-flex items-center gap-2 rounded-xl border border-slate-700 px-5 py-3 text-sm font-medium text-slate-300 transition-all hover:border-indigo-500 hover:bg-indigo-500/10 hover:text-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
       >
         {label}
-        <span aria-hidden="true">→</span>
+        <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">→</span>
       </a>
     </div>
   );
@@ -161,6 +161,14 @@ function ExploreMore({ href, label }: { href: string; label: string }) {
 export default function Home() {
   return (
     <div className="relative bg-slate-950 text-slate-50">
+      {/* Skip to content link for accessibility */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-indigo-500 focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-white"
+      >
+        Skip to main content
+      </a>
+
       {/* ── Ambient background ── */}
       <div className="pointer-events-none fixed inset-0">
         <div className="absolute -left-24 -top-24 h-72 w-72 rounded-full bg-indigo-500/5 blur-3xl" />
@@ -191,7 +199,7 @@ export default function Home() {
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="text-sm text-slate-400 transition-colors hover:text-slate-200"
+                  className="text-sm text-slate-400 transition-colors hover:text-slate-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
                 >
                   {link.label}
                 </a>
@@ -204,7 +212,7 @@ export default function Home() {
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="rounded-md px-2.5 py-1.5 text-xs font-medium text-slate-400 transition-colors hover:bg-slate-800 hover:text-slate-200"
+                  className="rounded-md px-2.5 py-1.5 text-xs font-medium text-slate-400 transition-colors hover:bg-slate-800 hover:text-slate-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
                 >
                   {link.label}
                 </a>
@@ -214,7 +222,10 @@ export default function Home() {
         </nav>
       </header>
 
-      <main className="relative z-10 mx-auto max-w-6xl space-y-32 px-4 pb-24 pt-16 sm:px-6 sm:pt-24">
+      <main
+        id="main-content"
+        className="relative z-10 mx-auto max-w-6xl space-y-24 px-4 pb-24 pt-16 sm:space-y-32 sm:px-6 sm:pt-24"
+      >
         {/* ════════════════════════════════════════════════════════════
             HERO
             ════════════════════════════════════════════════════════════ */}
@@ -244,13 +255,13 @@ export default function Home() {
             >
               <a
                 href="#projects"
-                className="inline-flex h-11 items-center justify-center rounded-lg bg-indigo-500 px-6 text-sm font-semibold text-white transition-all hover:bg-indigo-400 hover:shadow-[0_0_28px_rgba(99,102,241,0.25)] sm:px-8"
+                className="inline-flex h-11 items-center justify-center rounded-lg bg-indigo-500 px-6 text-sm font-semibold text-white transition-all hover:bg-indigo-400 hover:shadow-[0_0_28px_rgba(99,102,241,0.25)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 sm:px-8"
               >
                 View My Work
               </a>
               <a
                 href="#contact"
-                className="inline-flex h-11 items-center justify-center rounded-lg border border-slate-700 px-6 text-sm font-semibold text-slate-300 transition-all hover:border-slate-500 hover:bg-slate-800 sm:px-8"
+                className="inline-flex h-11 items-center justify-center rounded-lg border border-slate-700 px-6 text-sm font-semibold text-slate-300 transition-all hover:border-slate-500 hover:bg-slate-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 sm:px-8"
               >
                 Get in Touch
               </a>
@@ -372,7 +383,7 @@ export default function Home() {
             CONTACT / FOOTER
             ════════════════════════════════════════════════════════════ */}
         <ScrollReveal>
-          <footer id="contact" className="scroll-mt-20 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 sm:p-12">
+          <footer id="contact" className="scroll-mt-20 rounded-2xl border border-slate-800 bg-gradient-to-b from-slate-900/80 to-slate-900/60 p-8 sm:p-12">
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
               <div className="space-y-3">
                 <SectionLabel>Contact</SectionLabel>
@@ -390,7 +401,10 @@ export default function Home() {
                   { label: "LinkedIn", value: "linkedin.com/ye-lynn-htet", href: `https://${contact.linkedin}` },
                   { label: "GitHub", value: contact.github, href: `https://${contact.github}` },
                 ].map((item) => (
-                  <div key={item.label} className="rounded-lg border border-slate-800 bg-slate-950/60 p-4 transition-colors hover:border-slate-700">
+                  <div
+                    key={item.label}
+                    className="rounded-lg border border-slate-800 bg-slate-950/60 p-4 transition-all hover:border-slate-600 hover:bg-slate-900/60"
+                  >
                     <dt className="mb-1 font-mono text-xs font-medium tracking-[0.15em] text-slate-500 uppercase">
                       {item.label}
                     </dt>
@@ -416,6 +430,17 @@ export default function Home() {
             </p>
           </footer>
         </ScrollReveal>
+
+        {/* Back to top */}
+        <div className="pt-8 text-center">
+          <a
+            href="#"
+            className="inline-flex items-center gap-2 text-sm text-slate-500 transition-colors hover:text-slate-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+          >
+            <span aria-hidden="true" className="text-lg">↑</span>
+            Back to top
+          </a>
+        </div>
       </main>
     </div>
   );

@@ -32,7 +32,7 @@ export function AccentBar({ accent }: { accent: Accent }) {
 export function Tag({ children, accent }: { children: string; accent: Accent }) {
   const t = accentTokens[accent];
   return (
-    <span className={`rounded-full border px-2.5 py-0.5 text-xs font-medium ${t.tag} bg-slate-900/80`}>
+    <span className={`rounded-full border px-2.5 py-0.5 text-xs font-medium transition-colors ${t.tag} bg-slate-900/80 hover:bg-slate-800/80`}>
       {children}
     </span>
   );
@@ -42,7 +42,7 @@ export function BackLink({ href, label }: { href: string; label: string }) {
   return (
     <a
       href={href}
-      className="inline-flex items-center gap-1.5 text-sm text-slate-400 transition-colors hover:text-indigo-400"
+      className="inline-flex items-center gap-1.5 text-sm text-slate-400 transition-colors hover:text-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
     >
       <span aria-hidden="true">←</span>
       {label}
@@ -54,7 +54,7 @@ export function BackLink({ href, label }: { href: string; label: string }) {
 
 export function SkillGroupCard({ group }: { group: SkillGroup }) {
   return (
-    <div className="group rounded-xl border border-slate-800 bg-slate-900/60 p-5 transition-all hover:border-slate-700 sm:p-6">
+    <div className="group rounded-xl border border-slate-800 bg-slate-900/60 p-5 transition-all hover:-translate-y-0.5 hover:border-slate-700 hover:shadow-lg sm:p-6">
       <div className="mb-4 flex items-center gap-3">
         <AccentBar accent={group.accent} />
         <h3 className="text-sm font-semibold tracking-tight text-slate-200">
@@ -81,7 +81,7 @@ export function ExperienceCard({ exp }: { exp: Experience }) {
         className={`absolute left-[11px] top-1.5 h-[9px] w-[9px] rounded-full border-2 border-slate-800 bg-slate-950 transition-colors group-hover:border-slate-600 sm:left-[13px] sm:h-3 sm:w-3 ${accentTokens[exp.accent].bar}`}
       />
       {/* Card */}
-      <div className="rounded-xl border border-slate-800 bg-slate-900/60 p-5 transition-all hover:border-slate-700 sm:p-6">
+      <div className="rounded-xl border border-slate-800 bg-slate-900/60 p-5 transition-all hover:-translate-y-0.5 hover:border-slate-700 hover:shadow-lg sm:p-6">
         <div className="mb-4 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <h3 className="text-base font-semibold text-slate-100">
@@ -120,7 +120,10 @@ export function ProjectCard({ project, linkable = false }: { project: Project; l
       <div className="relative z-10 flex flex-col gap-2">
         <h3 className="text-base font-semibold tracking-tight text-slate-100">
           {linkable ? (
-            <a href={`/projects/${toSlug(project.title)}`} className="hover:text-indigo-400 transition-colors">
+            <a
+              href={`/projects/${toSlug(project.title)}`}
+              className="transition-colors hover:text-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+            >
               {project.title}
             </a>
           ) : (
@@ -144,7 +147,7 @@ export function ProjectCard({ project, linkable = false }: { project: Project; l
           href={project.appStore}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 rounded-lg border border-slate-700 px-3 py-1.5 text-xs font-medium text-slate-400 transition-colors hover:border-slate-500 hover:text-slate-300"
+          className="inline-flex items-center gap-1.5 rounded-lg border border-slate-700 px-3 py-1.5 text-xs font-medium text-slate-400 transition-colors hover:border-slate-500 hover:text-slate-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
         >
           <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
