@@ -40,9 +40,9 @@ export const experiences: Experience[] = [
     period: "Jan 2025 — Present",
     accent: "indigo",
     highlights: [
-      "Leading Flutter refactoring initiatives across multiple modules",
-      "Building remote rehabilitation systems with real-time MQTT communication",
-      "Collaborating directly with tech leads on architecture decisions",
+      "Maintain and refactor Flutter applications for iOS and Android, improving performance and maintainability",
+      "Research and develop a remote rehabilitation system using Flutter, MQTT, Python, and FastAPI",
+      "Publish app updates to the Apple App Store and Google Play Store, resolving production issues",
     ],
   },
   {
@@ -51,9 +51,9 @@ export const experiences: Experience[] = [
     period: "Nov 2023 — Oct 2024",
     accent: "sky",
     highlights: [
-      "Built SPOTV NOW — a live sports streaming app with BrightCove SDK integration",
-      "Developed Pet Lovers Centre e-commerce app with In-App purchases and biometrics",
-      "Delivered pixel-perfect UIKit interfaces for high-traffic consumer apps",
+      "Developed and maintained SPOTV NOW and Pet Lovers Centre iOS applications",
+      "Implemented In-App Purchases, biometric authentication, and BrightCove video streaming",
+      "Protected sensitive user data with Apple Keychain and encryption",
     ],
   },
   {
@@ -62,9 +62,9 @@ export const experiences: Experience[] = [
     period: "Feb 2023 — Nov 2023",
     accent: "emerald",
     highlights: [
-      "Developed SAYA English learning app with Zoom and VdoCipher SDKs",
-      "Built MCPA application with real-time WebSocket features",
-      "Implemented secure Apple Keychain services for credential storage",
+      "Developed and maintained the SAYA and MCPA Member applications",
+      "Integrated Zoom SDK and VdoCipher SDK for secure online learning",
+      "Implemented Firebase Cloud Messaging and WebSocket for real-time communication",
     ],
   },
   {
@@ -73,9 +73,9 @@ export const experiences: Experience[] = [
     period: "Jun 2021 — Feb 2023",
     accent: "amber",
     highlights: [
-      "Built iOS apps from scratch using MVVM architecture and RxSwift",
-      "Developed Flash Mall EPOS system with Bluetooth print integration",
-      "Delivered Sonix Delivery app — real-time driver tracking and order management",
+      "Developed native iOS applications from scratch through to App Store release",
+      "Collaborated with Agile teams to design, develop, test, and deploy new features",
+      "Maintained existing applications and improved overall application stability",
     ],
   },
 ];
@@ -103,11 +103,11 @@ export const projects: Project[] = [
     appStore: "https://apps.apple.com/jp/app/kakely/id6642692743?l=en-US",
   },
   {
-    title: "Pet Lovers Centre",
-    description: "E-commerce app for Singapore's largest pet retailer — product catalog, cart, and biometric-secured checkout.",
-    tags: ["UIKit", "RxSwift", "Realm"],
+    title: "MCPA Member App",
+    description: "Membership management and information sharing app for the Myanmar Computer Professionals Association — sign-up, events, and profile flows.",
+    tags: ["UIKit", "RxSwift", "RxCocoa", "Firebase", "WebSocket"],
     accent: "sky",
-    appStore: "https://apps.apple.com/jp/app/plc-vip-concierge-sg/id1471953601?l=en-US",
+    appStore: "",
   },
   {
     title: "Flash Mall EPOS",
