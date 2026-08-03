@@ -40,9 +40,11 @@ export const experiences: Experience[] = [
     period: "Jan 2025 — Present",
     accent: "indigo",
     highlights: [
-      "Maintain and refactor Flutter applications for iOS and Android, improving performance and maintainability",
+      "Maintain and improve Flutter applications for both iOS and Android platforms",
+      "Refactor existing code to improve performance, readability, and maintainability",
       "Research and develop a remote rehabilitation system using Flutter, MQTT, Python, and FastAPI",
-      "Publish app updates to the Apple App Store and Google Play Store, resolving production issues",
+      "Publish application updates to the Apple App Store and Google Play Store",
+      "Investigate and resolve production issues while improving application stability",
     ],
   },
   {
@@ -52,8 +54,10 @@ export const experiences: Experience[] = [
     accent: "sky",
     highlights: [
       "Developed and maintained SPOTV NOW and Pet Lovers Centre iOS applications",
-      "Implemented In-App Purchases, biometric authentication, and BrightCove video streaming",
-      "Protected sensitive user data with Apple Keychain and encryption",
+      "Worked closely with designers, product managers, and technical leads to deliver new features",
+      "Implemented In-App Purchases, biometric authentication, and Brightcove video streaming",
+      "Protected sensitive user information using Apple Keychain and encryption",
+      "Improved application quality through bug fixes and code refactoring",
     ],
   },
   {
@@ -65,6 +69,9 @@ export const experiences: Experience[] = [
       "Developed and maintained the SAYA and MCPA Member applications",
       "Integrated Zoom SDK and VdoCipher SDK for secure online learning",
       "Implemented Firebase Cloud Messaging and WebSocket for real-time communication",
+      "Secured user credentials using Apple Keychain and encryption",
+      "Investigated and resolved production issues reported through Firebase Crashlytics",
+      "Worked with designers and product managers to build new features",
     ],
   },
   {
@@ -73,8 +80,9 @@ export const experiences: Experience[] = [
     period: "Jun 2021 — Feb 2023",
     accent: "amber",
     highlights: [
-      "Developed native iOS applications from scratch through to App Store release",
+      "Developed native iOS applications from scratch to App Store release",
       "Collaborated with Agile teams to design, develop, test, and deploy new features",
+      "Implemented new features by working closely with the project manager",
       "Maintained existing applications and improved overall application stability",
     ],
   },
